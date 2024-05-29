@@ -1,0 +1,231 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 260046848 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3613), pid=31272, tid=5540
+#
+# JRE version:  (17.0.9+8) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.9+8-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar=49695:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\bin -Dfile.encoding=UTF-8 BackEndC3.ClinicaOdontologica.ClinicaOdontologicaApplication
+
+Host: AMD Ryzen 7 4800H with Radeon Graphics         , 16 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+Time: Tue May 28 22:06:23 2024 Hora est. Pacífico, Sudamérica elapsed time: 0.017128 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000025cc6655950):  JavaThread "Unknown thread" [_thread_in_vm, id=5540, stack(0x000000f573500000,0x000000f573600000)]
+
+Stack: [0x000000f573500000,0x000000f573600000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67cb49]
+V  [jvm.dll+0x8344da]
+V  [jvm.dll+0x835f9e]
+V  [jvm.dll+0x836603]
+V  [jvm.dll+0x247b5f]
+V  [jvm.dll+0x679969]
+V  [jvm.dll+0x66e2ba]
+V  [jvm.dll+0x307a5b]
+V  [jvm.dll+0x30ef06]
+V  [jvm.dll+0x35ecee]
+V  [jvm.dll+0x35ef1f]
+V  [jvm.dll+0x2de658]
+V  [jvm.dll+0x2df5c4]
+V  [jvm.dll+0x805d51]
+V  [jvm.dll+0x36cb51]
+V  [jvm.dll+0x7e47dc]
+V  [jvm.dll+0x3f03cf]
+V  [jvm.dll+0x3f2001]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa48]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe81a6ee98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000025cc66bfe90 GCTaskThread "GC Thread#0" [stack: 0x000000f573600000,0x000000f573700000] [id=32164]
+  0x0000025cc66d04a0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000f573700000,0x000000f573800000] [id=9320]
+  0x0000025cc66d0ec0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000f573800000,0x000000f573900000] [id=27072]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe8122f097]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000025cc66509d0] Heap_lock - owner thread: 0x0000025cc6655950
+
+Heap address: 0x0000000709400000, size: 3948 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000709400000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe816168f9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library C:\Users\luchi\.jdks\corretto-17.0.9\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6c5420000 - 0x00007ff6c542e000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\java.exe
+0x00007fff2abf0000 - 0x00007fff2ae07000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff29f70000 - 0x00007fff2a034000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff27f10000 - 0x00007fff282b7000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff28570000 - 0x00007fff28681000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff15dc0000 - 0x00007fff15dd7000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\jli.dll
+0x00007fff15da0000 - 0x00007fff15dbb000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\VCRUNTIME140.dll
+0x00007fff298e0000 - 0x00007fff29a8e000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff28540000 - 0x00007fff28566000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff149a0000 - 0x00007fff14c33000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76\COMCTL32.dll
+0x00007fff29470000 - 0x00007fff29499000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff2aa50000 - 0x00007fff2aaf7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff28800000 - 0x00007fff28919000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff28330000 - 0x00007fff283ca000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff294e0000 - 0x00007fff29511000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff158c0000 - 0x00007fff158cc000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\vcruntime140_1.dll
+0x00007ffee5290000 - 0x00007ffee531d000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\msvcp140.dll
+0x00007ffe80f40000 - 0x00007ffe81ba1000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\server\jvm.dll
+0x00007fff2a4e0000 - 0x00007fff2a592000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff28920000 - 0x00007fff289c8000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff283d0000 - 0x00007fff283f8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fff29740000 - 0x00007fff29855000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff0ba80000 - 0x00007fff0ba89000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff20690000 - 0x00007fff206c4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff27800000 - 0x00007fff2784d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007fff20000000 - 0x00007fff2000a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff2a5a0000 - 0x00007fff2a611000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff27780000 - 0x00007fff27793000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007fff26f00000 - 0x00007fff26f18000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff158b0000 - 0x00007fff158ba000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\jimage.dll
+0x00007fff1c780000 - 0x00007fff1c9b2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fff2a140000 - 0x00007fff2a4c8000 	C:\WINDOWS\System32\combase.dll
+0x00007fff289d0000 - 0x00007fff28aa7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff1b7f0000 - 0x00007fff1b822000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff28400000 - 0x00007fff28479000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff14690000 - 0x00007fff1469e000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\instrument.dll
+0x00007fff14660000 - 0x00007fff14685000 	C:\Users\luchi\.jdks\corretto-17.0.9\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\luchi\.jdks\corretto-17.0.9\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76;C:\Users\luchi\.jdks\corretto-17.0.9\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar=49695:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\bin -Dfile.encoding=UTF-8 
+java_command: BackEndC3.ClinicaOdontologica.ClinicaOdontologicaApplication
+java_class_path (initial): C:\DIGITAL_HOUSE\BIMESTRE 5\BACKEND I\ClinicaOdontologica-Final\target\classes;C:\Users\luchi\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.2.4\spring-boot-starter-thymeleaf-3.2.4.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.4\spring-boot-starter-3.2.4.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot\3.2.4\spring-boot-3.2.4.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.4\spring-boot-autoconfigure-3.2.4.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.4\spring-boot-starter-logging-3.2.4.jar;C:\Users\luchi\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\luchi\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\luchi\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\luchi\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\luchi\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar;C:\Users\luchi\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\luchi\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\luchi\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\luchi\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\luchi\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\luchi\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\luchi\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\luchi\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.4\spring-boot-starter-web-3.2.4
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 260046848                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4139778048                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4139778048                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.12
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.20.8-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.19.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\bin;C:\Program Files\Common Files\Siemens\Automation\Simatic OAM\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_291\bin;C:\WINDOWS\system32;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\luchi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.12\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\luchi\.pyenv\pyenv-win\bin;C:\Users\luchi\.pyenv\pyenv-win\shims;C:\Users\luchi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luchi\AppData\Local\Programs\Python\Python311\;C:\Users\luchi\AppData\Local\Microsoft\WindowsApps;C:\Users\luchi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\luchi\AppData\Local\GitHubDesktop\bin;C:\Tools\Gradle\gradle-5.1-bin\gradle-5.1\bin;C:\Users\luchi\AppData\Roaming\npm;C:\Users\luchi\AppData\Local\Programs\oh-my-posh\bin;C:\Users\luchi\.dotnet\tools
+USERNAME=luchi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+TMP=C:\Users\luchi\AppData\Local\Temp
+TEMP=C:\Users\luchi\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+OS uptime: 0 days 6:45 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 96 stepping 1 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
+Processor Information for all 16 processors :
+  Max Mhz: 2901, Current Mhz: 2901, Mhz Limit: 2901
+
+Memory: 4k page, system-wide physical 15790M (5218M free)
+TotalPageFile size 19886M (AvailPageFile size 190M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 71M, peak: 318M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.9+8-LTS) for windows-amd64 JRE (17.0.9+8-LTS), built on Oct 12 2023 16:15:33 by "Administrator" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
